@@ -4,8 +4,8 @@ import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -17,6 +17,8 @@ import com.thelightphone.sdk.LightViewModel
 import com.thelightphone.sdk.SealedLightActivity
 import com.thelightphone.sdk.ui.LightBarButton
 import com.thelightphone.sdk.ui.LightBottomBar
+import com.thelightphone.sdk.ui.LightIcons
+import com.thelightphone.sdk.ui.LightScrollView
 import com.thelightphone.sdk.ui.LightText
 import com.thelightphone.sdk.ui.LightTextVariant
 import com.thelightphone.sdk.ui.LightTheme
@@ -58,34 +60,37 @@ class HomeScreen(sealedActivity: SealedLightActivity) : LightScreen<Unit, HomeSc
                         modifier = Modifier.padding(bottom = 1f.gridUnitsAsDp()),
                     )
 
-                    Row(){
+                    LightScrollView(
+                        modifier = Modifier
+                            .weight(1f)
+                            .fillMaxWidth()
+                            .padding(start = 2f.gridUnitsAsDp()),
+                    ) {
                         LightText(
-                            text = "test 1",
-                            variant = LightTextVariant.Paragraph
+                            text = "Hello",
+                            variant = LightTextVariant.Heading,
                         )
                         LightText(
-                            text = "test 2",
-                            variant = LightTextVariant.Paragraph
+                            text = "Hello2",
+                            variant = LightTextVariant.Heading,
                         )
                         LightText(
-                            text = "test 3",
-                            variant = LightTextVariant.Paragraph
+                            text = "Hello3",
+                            variant = LightTextVariant.Heading,
                         )
                     }
 
                     LightBottomBar(
                         listOf(
-                            LightBarButton.Text(
-                                text = "ONE",
-                                onClick = null
+                            LightBarButton.LightIcon(
+                                icon = LightIcons.AUDIO_MESSAGE,
+                                onClick = null,
+                                contentDescription = "Close",
                             ),
-                            LightBarButton.Text(
-                                text = "TWO",
-                                onClick = null
-                            ),
-                            LightBarButton.Text(
-                                text = "THREE",
-                                onClick = null
+                            LightBarButton.LightIcon(
+                                icon = LightIcons.COMPOSE_MESSAGE,
+                                onClick = null,
+                                contentDescription = "Close",
                             ),
                         ),
                     )
