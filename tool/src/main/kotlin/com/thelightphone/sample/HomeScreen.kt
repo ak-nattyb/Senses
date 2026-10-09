@@ -64,18 +64,28 @@ class HomeScreen(sealedActivity: SealedLightActivity) : LightScreen<Unit, HomeSc
                         modifier = Modifier
                             .weight(1f)
                             .fillMaxWidth()
-                            .padding(start = 2f.gridUnitsAsDp()),
+                            .padding(
+                                start = 2f.gridUnitsAsDp(),
+                            ),
                     ) {
                         LightText(
-                            text = "Hello",
+                            text = "Sight",
                             variant = LightTextVariant.Heading,
                         )
                         LightText(
-                            text = "Hello2",
+                            text = "Sound",
                             variant = LightTextVariant.Heading,
                         )
                         LightText(
-                            text = "Hello3",
+                            text = "Smell",
+                            variant = LightTextVariant.Heading,
+                        )
+                        LightText(
+                            text = "Touch",
+                            variant = LightTextVariant.Heading,
+                        )
+                        LightText(
+                            text = "Taste",
                             variant = LightTextVariant.Heading,
                         )
                     }
